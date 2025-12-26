@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App 🧠</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+
+    <!-- Landing Page -->
+    <section id="landing" class="landing">
+      <h1>Quiz App 🧠</h1>
+      <div class="landing-controls">
+        <select id="category">
+          <option value="">Any Category</option>
+          <option value="18">Computer Science</option>
+          <option value="9">General Knowledge</option>
+          <option value="21">Sports</option>
+          <option value="23">History</option>
+          <option value="22">Geography</option>
+          <option value="17">Science & Nature</option>
+          <option value="indiaHistory">India History</option>
+        </select>
+        <select id="difficulty">
+          <option value="">Any Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+        <select id="amount">
+          <option value="5">5 Qs</option>
+          <option value="10" selected>10 Qs</option>
+          <option value="15">15 Qs</option>
+        </select>
+        <button id="startBtn">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz Page -->
+    <section id="quizPage" class="hidden">
+      <header class="topbar">
+        <div id="statusBar" class="status">
+          <div>Question: <span id="progress">1</span>/<span id="total">10</span></div>
+          <div>Score: <span id="score">0</span></div>
+          <div class="timer">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <path id="timerPath" class="circle"
+                stroke-dasharray="100, 100"
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <text x="18" y="20.35" class="percentage" id="timerText">20</text>
+            </svg>
+          </div>
+        </div>
+      </header>
+
+      <section id="card" class="card">
+        <h2 id="question">Loading…</h2>
+        <div id="options" class="options"></div>
+        <div class="nav">
+          <button id="backBtn" class="ghost">Back</button>
+          <button id="skipBtn" class="ghost">Skip</button>
+          <button id="nextBtn">Next</button>
+        </div>
+      </section>
+
+      <section id="result" class="result hidden"></section>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
